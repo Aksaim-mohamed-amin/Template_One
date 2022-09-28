@@ -129,7 +129,7 @@ header .links ul li:not(:last-child) {
 /* Header End */
 /* Landing Page Start */
 .landing {
-  background-image: url("/Images/landing.jpg");
+  background-image: url("/Template_One/imgs/landing.jpg");
   background-size: cover;
   background-position: center;
   height: calc(100vh - 63.55px);
