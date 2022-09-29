@@ -41,7 +41,17 @@ body {
 /* Global Rules End */
 /* Header Start*/
 header {
+  position: absolute;
+  width: 100%;
   padding: 20px 10px;
+  z-index: 4;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
 }
 header .container {
   display: flex;
@@ -49,7 +59,7 @@ header .container {
   align-items: center;
 }
 header .container .logo {
-  width: 80px;
+  width: 100px;
 }
 header .container .links {
   position: relative;
@@ -90,7 +100,7 @@ header .links ul {
   margin: 0;
   width: 200px;
   display: none;
-  background-color: var(--background1);
+  background-color: rgba(246, 246, 246, 30%);
   transition: all .3s ease-in-out;
   -webkit-transition: all .3s ease-in-out;
   -moz-transition: all .3s ease-in-out;
@@ -104,7 +114,7 @@ header .links:hover ul {
 header .links ul::after {
   content: "";
   border: 10px solid;
-  border-color: transparent transparent var(--background1) transparent;
+  border-color: transparent transparent rgba(246, 246, 246, 50%) transparent;
   position: absolute;
   top: -20px;
   right: 5px;
@@ -122,6 +132,7 @@ header .links ul li a {
 }
 header .links ul li a:hover {
   padding-left: 35px;
+  color: var(--main-color);
 }
 header .links ul li:not(:last-child) {
   border-bottom: 1px solid #ddd;
@@ -132,7 +143,7 @@ header .links ul li:not(:last-child) {
   background-image: url("/Template_One/imgs/landing.jpg");
   background-size: cover;
   background-position: center;
-  height: calc(100vh - 63.55px);
+  height: 100vh;
   position: relative;
 }
 .landing .intro {
@@ -160,6 +171,60 @@ header .links ul li:not(:last-child) {
   max-width: 100%;
 }
 /* Landing Page End */
+/* Go Up Button Start*/
+.go-up {
+  display: block;
+  width: 43px;
+  height: 43px;
+  background-color: var(--secendary-color);
+  position: sticky;
+  top: calc(100% - 110px);
+  left: 100%;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  transform: translate(-50%);
+  -webkit-transform: translate(-50%);
+  -moz-transform: translate(-50%);
+  -ms-transform: translate(-50%);
+  -o-transform: translate(-50%);
+}
+.go-up::before {
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  top: 50%;
+  left: 50%;
+  border: 3px solid;
+  border-color: var(--main-color) var(--main-color) transparent transparent;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+  -moz-transform: translate(-50%, -50%) rotate(-45deg);
+  -ms-transform: translate(-50%, -50%) rotate(-45deg);
+  -o-transform: translate(-50%, -50%) rotate(-45deg);
+}
+.go-up::after {
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+  width: 3px;
+  height: 20px;
+  background-color: var(--main-color);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -48%);
+  -webkit-transform: translate(-50%, -48%);
+  -moz-transform: translate(-50%, -48%);
+  -ms-transform: translate(-50%, -48%);
+  -o-transform: translate(-50%, -48%);
+}
+/* Go Up Button End*/
 /* features Start */
 .features {
   background-color: var(--background1);
@@ -261,6 +326,19 @@ width: 250px;
 }
 #portfolio .container .cards-con .card {
   background-color: white;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+}
+#portfolio .container .cards-con .card:hover {
+  transform: scale(105%);
+  -webkit-transform: scale(105%);
+  -moz-transform: scale(105%);
+  -ms-transform: scale(105%);
+  -o-transform: scale(105%);
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 #portfolio .container .cards-con img {
   width: 100%;
@@ -277,6 +355,23 @@ width: 250px;
   font-weight: 300;
   padding: 10px 0;
   margin: 0;
+}
+#portfolio .container .cards-con .card a {
+  text-decoration: none;
+  display: block;
+  width: max-content;
+  margin-left: 100%;
+  transform: translateX(-100%);
+  -webkit-transform: translateX(-100%);
+  -moz-transform: translateX(-100%);
+  -ms-transform: translateX(-100%);
+  -o-transform: translateX(-100%);
+  padding: 15px;
+  color: black;
+  font-size: 14px;
+}
+#portfolio .container .cards-con .card a:hover {
+  text-decoration: underline;
 }
 /* Portfolio End */
 /* About Start */
